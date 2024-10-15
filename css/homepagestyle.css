@@ -1,0 +1,79 @@
+/*homepagestyle.css*/
+.btn-custom {
+    background-color:skyblue; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-left: 1200px;
+    font-size: 20px;
+    
+}
+
+.btn-custom:hover {
+    background-color: green; 
+    transform: scale(1.05);
+
+}
+h1 {
+    color: black;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 30px;
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
+    color: black;
+
+}
+
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color:blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+    font-size: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+#guide{
+    text-align: center;
+    font-size: 45px;
+}
+
+
