@@ -74,5 +74,6 @@
     echo "<h2>Welcome to my blog about Niigata!</h2>";
     echo "<p>Last updated: " . date("Y-m-d H:i:s") . "</p>";
     ?>
+    
 </body>
 </html>

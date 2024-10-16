@@ -1,0 +1,31 @@
+version: '3.8'  # Specify the Docker Compose file version
+
+services:
+  web:  # This is the service for the PHP application
+    build:  # Use the Dockerfile in the current directory
+      context: .  # Specify the build context as the current directory
+      dockerfile: Dockerfile  # Specify the Dockerfile name if it’s named differently
+    ports:
+      - "8080:80"  # Map port 8080 on the host to port 80 on the container
+    volumes:
+      - .:/var/www/html  # Mount the current directory to the container's web root
+    networks:
+      - my-network  # Connect to a custom network
+
+  db:  # This is the service for the MySQL database
+    image: mysql:5.7  # Use the official MySQL image
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Set the root password for MySQL
+      MYSQL_DATABASE: my_database  # Create a default database
+      MYSQL_USER: user  # Create a default user
+      MYSQL_PASSWORD: userpassword  # Set the user's password
+    volumes:
+      - db_data:/var/lib/mysql  # Persist MySQL data
+    networks:
+      - my-network  # Connect to the same network as the web service
+
+networks:
+  my-network:  # Define a custom network
+
+volumes:
+  db_data:  # Define a volume for MySQL data persistence
