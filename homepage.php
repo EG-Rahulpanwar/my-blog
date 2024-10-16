@@ -67,7 +67,6 @@
         </table>
     </div>
 
-    <h2>This is all about the local area</h2>
     <h1>This is a trial for the new branch</h1>
 
     <?php
