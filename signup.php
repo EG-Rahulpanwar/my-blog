@@ -17,7 +17,21 @@
 <body>
     <div class="container signup-container">
         <h2 class="text-center">Sign Up</h2>
-        <form action="signup_process.php" method="POST">
+
+        <!-- PHP to display signup status -->
+        <?php if (isset($registrationSuccess)): ?>
+            <?php if ($registrationSuccess): ?>
+                <div class="alert alert-success" role="alert">
+                    Registration successful! You can now <a href="login.php">Login</a>.
+                </div>
+            <?php else: ?>
+                <div class="alert alert-danger" role="alert">
+                    There was an error with your registration. Please fill out all fields.
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
