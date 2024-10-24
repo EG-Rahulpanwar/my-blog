@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Niigata city is located in a northern <br>
             part of 'niigata' it faces the sea
             of Japan and <a href="https://www.google.com/" target="_blank">Sado Island.</a> I am living here <br>
-            on April 1st, the weather is usually cloudy here and
-            during the winter, it gets very cold.<br> From now on I am going to learn more about this city and I will write everything
+            from April 1st, the weather is usually cloudy here and
+            during the winter, it's very cold.<br> From now on I am going to explore more about this city and I will write everything
             on this page.
         </p>
         <br>
