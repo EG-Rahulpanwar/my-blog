@@ -31,7 +31,7 @@
             <?php endif; ?>
         <?php endif; ?>
 
-        <form action="" method="POST">
+        <form action="login_process.php" method="POST">
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" required>
@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Login</button>
-            <p class="text-center">Don't have an account? <a href="#">Sign up</a></p>
+            <p class="text-center">Don't have an account? <a href="signup.php">Sign up</a></p> <!-- Updated link -->
         </form>
     </div>
 </body>

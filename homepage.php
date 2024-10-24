@@ -1,3 +1,24 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in; if not, redirect to login.php
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("location: login.php");
+    exit;
+}
+
+// Handle logout
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Destroy the session
+    session_destroy();
+
+    // Redirect to login page
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +35,7 @@
 <body style="background-color: white;">
     <div class="container mt-5">
         <!-- Logout Button -->
-        <form action="index.php" method="post">
+        <form action="" method="post">
             <button type="submit" class="btn btn-custom">Logout</button>
         </form>
     </div>
@@ -66,13 +87,5 @@
             </tr>
         </table>
     </div>
-
-    <h1>This is a trial for the new branch</h1>
-
-    <?php
-    // Example of using PHP to display a greeting and the current date and time
-    echo "<h2>Welcome to my blog about Niigata!</h2>";
-    echo "<p>Last updated: " . date("Y-m-d H:i:s") . "</p>";
-    ?>
 </body>
 </html>
