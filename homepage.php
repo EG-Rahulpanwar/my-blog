@@ -1,6 +1,6 @@
 <?php
 // Start the session
-session_start();
+session_start(); 
 
 // Check if the user is logged in; if not, redirect to login.php
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
@@ -9,10 +9,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 // Handle logout
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
     // Destroy the session
     session_destroy();
-
+    
     // Redirect to login page
     header("location: login.php");
     exit;
@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,14 +29,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="css/homepagestyle.css">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 20px;
+        }
+        .btn-custom {
+            background-color: #87CEEB;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background-color: #5F9EA0;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body style="background-color: white;">
-    <div class="container mt-5">
+    <div class="button-container">
         <!-- Logout Button -->
-        <form action="" method="post">
-            <button type="submit" class="btn btn-custom">Logout</button>
+        <form action="" method="post" style="margin: 0;">
+            <button type="submit" name="logout" class="btn-custom">Logout</button>
         </form>
+        <!-- Weather Button -->
+        <a href="weather.php" class="btn-custom">Weather</a>
     </div>
 
     <div>
